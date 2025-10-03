@@ -4,7 +4,9 @@
   "description": "Ed25519 elliptic curve operations for [`noise-handshake`](https://github.com/chm-diederichs/noise-handshake)",
   "main": "index.js",
   "scripts": {
-    "test": "npx standard && tape test.js"
+    "format": "prettier --write .",
+    "lint": "prettier --check .",
+    "test": "npm run lint && tape test.js"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,8 @@
   },
   "devDependencies": {
     "noise-handshake": "^3.0.0",
-    "standard": "^16.0.3",
+    "prettier": "^3.6.2",
+    "prettier-config-holepunch": "^1.0.0",
     "tape": "^5.2.2"
   }
 }
