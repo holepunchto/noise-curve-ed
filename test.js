@@ -2,7 +2,7 @@ const Noise = require('noise-handshake')
 const test = require('tape')
 const curve = require('./')
 
-test('XX', t => {
+test('XX', (t) => {
   const initiator = new Noise('XX', true, null, { curve })
   const responder = new Noise('XX', false, null, { curve })
 

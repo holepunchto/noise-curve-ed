@@ -20,7 +20,7 @@ module.exports = {
   dh
 }
 
-function generateKeyPair (privKey) {
+function generateKeyPair(privKey) {
   if (privKey) return generateSeedKeyPair(privKey.subarray(0, 32))
 
   const keyPair = {}
@@ -31,7 +31,7 @@ function generateKeyPair (privKey) {
   return keyPair
 }
 
-function generateSeedKeyPair (seed) {
+function generateSeedKeyPair(seed) {
   const keyPair = {}
   keyPair.secretKey = b4a.alloc(SKLEN)
   keyPair.publicKey = b4a.alloc(PKLEN)
@@ -40,7 +40,7 @@ function generateSeedKeyPair (seed) {
   return keyPair
 }
 
-function dh (publicKey, { scalar, secretKey }) {
+function dh(publicKey, { scalar, secretKey }) {
   // tweaked keys expose scalar directly
   if (!scalar) {
     assert(secretKey.byteLength === SKLEN)
@@ -61,11 +61,7 @@ function dh (publicKey, { scalar, secretKey }) {
   const output = b4a.alloc(DHLEN)
 
   // we clamp if necessary above
-  sodium.crypto_scalarmult_ed25519_noclamp(
-    output,
-    scalar,
-    publicKey
-  )
+  sodium.crypto_scalarmult_ed25519_noclamp(output, scalar, publicKey)
 
   return output
 }
