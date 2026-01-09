@@ -1,8 +1,8 @@
 const Noise = require('noise-handshake')
-const test = require('tape')
+const test = require('brittle')
 const curve = require('./')
 
-test('XX', t => {
+test('XX', (t) => {
   const initiator = new Noise('XX', true, null, { curve })
   const responder = new Noise('XX', false, null, { curve })
 
@@ -15,7 +15,6 @@ test('XX', t => {
   const reply = responder.send()
   initiator.recv(reply)
 
-  t.deepEqual(initiator.rx, responder.tx)
-  t.deepEqual(initiator.tx, responder.rx)
-  t.end()
+  t.alike(initiator.rx, responder.tx)
+  t.alike(initiator.tx, responder.rx)
 })

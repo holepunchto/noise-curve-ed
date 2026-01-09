@@ -3,6 +3,7 @@
 Ed25519 elliptic curve operations for [`noise-handshake`](https://github.com/chm-diederichs/noise-handshake)
 
 ## Usage
+
 ```js
 const curve = require('noise-curve-ed')
 const Noise = require('noise-handshake')

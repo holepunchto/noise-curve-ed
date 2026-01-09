@@ -4,7 +4,11 @@
   "description": "Ed25519 elliptic curve operations for [`noise-handshake`](https://github.com/chm-diederichs/noise-handshake)",
   "main": "index.js",
   "scripts": {
-    "test": "npx standard && tape test.js"
+    "format": "prettier --write .",
+    "lint": "prettier --check . && lunte",
+    "test": "npm run test:node && npm run test:bare",
+    "test:node": "brittle-node test.js",
+    "test:bare": "brittle-bare test.js"
   },
   "repository": {
     "type": "git",
@@ -23,8 +27,10 @@
     "sodium-universal": "^5.0.0"
   },
   "devDependencies": {
+    "brittle": "^3.5.0",
+    "lunte": "^1.0.0",
     "noise-handshake": "^3.0.0",
-    "standard": "^16.0.3",
-    "tape": "^5.2.2"
+    "prettier": "^3.6.2",
+    "prettier-config-holepunch": "^2.0.0"
   }
 }
