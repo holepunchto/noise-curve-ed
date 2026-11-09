@@ -1,6 +1,6 @@
 # noise-curve-ed
 
-Ed25519 elliptic curve operations for [`noise-handshake`](https://github.com/chm-diederichs/noise-handshake)
+Ed25519 elliptic curve operations for [`noise-handshake`](https://github.com/holepunchto/noise-handshake)
 
 ## Usage
 
